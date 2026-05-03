@@ -135,8 +135,9 @@ Both motors on same side are **wired in parallel** — they receive identical si
 ---
 
 ## 👨‍💻 Author
-**Jayanath Karney**
-Course Project — Embedded Systems
+**Jayanath Karney**  
+
+IISc Course Project  — Embedded Systems Design
 
 ---
 
