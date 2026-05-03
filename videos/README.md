@@ -6,7 +6,7 @@
 
 [![Robot Demo]](https://www.youtube.com/shorts/2mxlp9dPnkk)
 
-▶️ Click image to watch on YouTube
+▶️ Click above link to watch on YouTube
 
 ---
 
