@@ -43,8 +43,8 @@ Repeat forever
 | HC-SR04 | Ultrasonic distance sensor | 1 |
 | SG90 Servo Motor | Rotate camera left/right | 1 |
 | DC Gear Motors | Drive wheels | 4 |
-| L298N Motor Driver | Control motor direction/speed | 1 |
-| Robot Chassis | Base frame with wheels | 1 |
+| L298N Motor Driver | Control motor direction/speed | 2 |
+| Robot Chassis (4WD) | Base frame with 4 wheels | 1 |
 | Li-Po Battery (7.4V) | Power supply | 1 |
 | Jumper Wires | Connections | many |
 
@@ -63,12 +63,12 @@ Repeat forever
 
 | TM4C123 Pin | Connected To |
 |---|---|
-| PA2 | Left motor FORWARD |
-| PA3 | Left motor BACKWARD |
-| PA4 | Right motor FORWARD |
-| PA5 | Right motor BACKWARD |
-| PB6 | PWM Motor speed (L298N ENA) |
-| PB7 | PWM Motor speed (L298N ENB) |
+| PA2 | Left motors FORWARD (L298N IN1) |
+| PA3 | Left motors BACKWARD (L298N IN2) |
+| PA4 | Right motors FORWARD (L298N IN3) |
+| PA5 | Right motors BACKWARD (L298N IN4) |
+| PB6 | PWM speed left side (L298N ENA) |
+| PB7 | PWM speed right side (L298N ENB) |
 | PC4 | Servo signal |
 | PE0 | Ultrasonic TRIG |
 | PE1 | Ultrasonic ECHO |
@@ -83,12 +83,29 @@ Repeat forever
 git clone https://github.com/Jayanathkarney/
 Thermal-guided-human-following-robot-with-MLX90640
 
-### Step 2: Open in Keil uVision
-File → Open Project → select code/robot.uvprojx
+### Step 2: Open in Code Composer Studio (CCS)
+File → Import → CCS Projects
+Browse → select the code/ folder
+Click Finish
 
-### Step 3: Flash to TM4C123
-Build → Flash → Run
-Open serial monitor at 115200 baud to see debug output
+### Step 3: Build and Flash to TM4C123
+Project → Build All  (Ctrl+B)
+Run → Debug          (F11)
+Run → Resume         (F8)
+Open CCS Console → set baud 115200
+to see live debug output from robot
+
+---
+
+## 🖥️ Development Environment
+
+| Tool | Details |
+|---|---|
+| IDE | Code Composer Studio (CCS) |
+| Compiler | TI ARM Compiler |
+| Target MCU | TM4C123GH6PM (80MHz) |
+| Debug Interface | ICDI (on-board TM4C LaunchPad) |
+| Serial Monitor | CCS Console / PuTTY at 115200 baud |
 
 ---
 
@@ -96,10 +113,24 @@ Open serial monitor at 115200 baud to see debug output
 
 | Topic | Link |
 |---|---|
-| How the thermal detection works | [docs/thermal-detection.md](docs/) |
+| How thermal detection works | [docs/thermal-detection.md](docs/) |
 | State machine explained | [docs/state-machine.md](docs/) |
 | Circuit wiring guide | [hardware/](hardware/) |
 | Code walkthrough | [code/](code/) |
+
+---
+
+## 4WD Motor Wiring Logic
+LEFT SIDE  (front-left + rear-left motors):
+Both motor + terminals → L298N OUT1
+Both motor - terminals → L298N OUT2
+Controlled by PA2(fwd) PA3(bwd) PB6(PWM)
+RIGHT SIDE (front-right + rear-right motors):
+Both motor + terminals → L298N OUT3
+Both motor - terminals → L298N OUT4
+Controlled by PA4(fwd) PA5(bwd) PB7(PWM)
+
+Both motors on same side are **wired in parallel** — they receive identical signals and move together as one unit.
 
 ---
 
