@@ -102,7 +102,7 @@ to see live debug output from robot
 | Tool | Details |
 |---|---|
 | IDE | Code Composer Studio (CCS) |
-| Compiler | TI ARM Compiler |
+| Compiler | GNU Compiler |
 | Target MCU | TM4C123GH6PM (80MHz) |
 | Debug Interface | ICDI (on-board TM4C LaunchPad) |
 | Serial Monitor | CCS Console / PuTTY at 115200 baud |
