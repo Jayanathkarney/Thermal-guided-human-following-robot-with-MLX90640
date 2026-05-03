@@ -7,7 +7,7 @@ Thermal-Guided Human Following Robot.
 
 ## 📦 Download
 
-👉 **[Download ZIP: thermal-robot-tm4c123-code.zip](thermal_guided_robot_trial_4.zip)**
+👉 **https://github.com/Jayanathkarney/Thermal-guided-human-following-robot-with-MLX90640/blob/main/thermal_guided_robot_trial_4.zip**
 
 ---
 
