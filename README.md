@@ -42,7 +42,7 @@ Repeat forever
 | MLX90640 (32x24) | Thermal camera | 1 |
 | HC-SR04 | Ultrasonic distance sensor | 1 |
 | SG90 Servo Motor | Rotate camera left/right | 1 |
-| DC Gear Motors | Drive wheels | 2 |
+| DC Gear Motors | Drive wheels | 4 |
 | L298N Motor Driver | Control motor direction/speed | 1 |
 | Robot Chassis | Base frame with wheels | 1 |
 | Li-Po Battery (7.4V) | Power supply | 1 |
