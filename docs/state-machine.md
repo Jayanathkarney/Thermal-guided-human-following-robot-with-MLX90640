@@ -27,11 +27,11 @@ Robot is always in exactly ONE of these states:
          │          ┌──────▼──────┐
          │    ┌────→│    SCAN     │←──────────────────┐
          │    │     └──────┬──────┘                   │
-         │    │            │ human found               │
+         │    │            │ human found              │
          │    │     ┌──────▼──────┐                   │
          │    │     │    TURN     │                   │
          │    │     └──────┬──────┘                   │
-         │    │            │ always                    │
+         │    │            │ always                   │
          │    │     ┌──────▼──────┐   obstacle        │
          │    │     │    MOVE     │──────────────┐    │
          │    │     └─────────────┘              │    │
@@ -47,8 +47,8 @@ Robot is always in exactly ONE of these states:
          │              ┌──────▼──────┐      ┌──────▼──────┐
          │              │ WAIT_HUMAN  │      │    UTURN    │
          │              └──────┬──────┘      └──────┬──────┘
-         │           cleared   │ or timeout          │
-         └─────────────────────┘                     │
+         │           cleared   │ or timeout         │
+         └─────────────────────┘                    │
                                                      └──→SCAN
 ```
 
